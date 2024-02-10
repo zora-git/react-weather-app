@@ -3,10 +3,18 @@
   padding: 30px;
   border: transparent;
   border-radius: 10px;
-  max-width: 800px;
+  max-width: 700px;
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
   font-family: "Poppins", sans-serif;
   color: white;
+}
+
+.details {
+  padding: 10px;
+}
+
+.main {
+  max-width: 340px;
 }
 
 .main-icon {
@@ -51,4 +59,14 @@ form {
 h3 {
   font-size: 17px;
   margin-bottom: 30px;
+}
+
+@media (width < 768px) {
+  .weather-app {
+    text-align: center;
+  }
+
+  .main {
+    margin: 0 auto;
+  }
 }

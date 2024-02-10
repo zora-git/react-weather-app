@@ -21,25 +21,24 @@ export default function Weather() {
       <h1>Seoul</h1>
       <h3>Wednesday 7:00</h3>
 
-      <div className="row">
-        <div className="col-6">
-          <div className="row">
-            <div className="col-4">
+      <div className="row details">
+        <div className="col-md-6 main">
+          <div className="row main-section">
+            <div className="col-md-5">
               <img
                 src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
                 alt="Sunny"
                 className="main-icon"
               />
             </div>
-            <div className="col-4 main-temp">54</div>
-
-            <div className="col-4 unit">
+            <div className="col-5 main-temp">54</div>
+            <div className="col-2">
               <div className="row celcius">°C</div>
               <div className="row fahrenheit">°F</div>
             </div>
           </div>
         </div>
-        <div class="col-6">
+        <div class="col-md-6">
           <h4>Mostly Cloudy</h4>
           <ul>
             <li>Precipitation:15%</li>
