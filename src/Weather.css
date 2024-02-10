@@ -1,0 +1,21 @@
+.weather-app {
+  margin: 100px auto;
+  padding: 30px;
+  border: 1px solid;
+}
+
+.main-icon {
+  width: 100px;
+}
+
+.main-temp {
+  font-size: 80px;
+}
+
+.celcius {
+  font-size: 30px;
+}
+
+.fahrenheit {
+  font-size: 30px;
+}
