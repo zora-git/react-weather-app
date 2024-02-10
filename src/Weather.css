@@ -1,7 +1,12 @@
 .weather-app {
   margin: 100px auto;
   padding: 30px;
-  border: 1px solid;
+  border: transparent;
+  border-radius: 10px;
+  max-width: 800px;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  font-family: "Poppins", sans-serif;
+  color: white;
 }
 
 .main-icon {
@@ -12,10 +17,38 @@
   font-size: 80px;
 }
 
+.unit {
+  padding-top: 20px;
+}
+
 .celcius {
-  font-size: 30px;
+  font-size: 20px;
+  padding-left: 10px;
 }
 
 .fahrenheit {
-  font-size: 30px;
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+.form-control {
+  opacity: 0.5;
+}
+
+.search {
+  height: 38px;
+  border-color: transparent;
+  border-radius: 6px;
+  padding: 0 10px;
+  color: white;
+  background-color: #2a5dc4;
+}
+
+form {
+  padding-bottom: 30px;
+}
+
+h3 {
+  font-size: 17px;
+  margin-bottom: 30px;
 }

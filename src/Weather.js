@@ -9,12 +9,12 @@ export default function Weather() {
           <div className="col-9">
             <input
               type="search"
-              placeholder="Enter a city"
+              placeholder="Enter a city..."
               className="form-control"
             />
           </div>
           <div className="col-3">
-            <input type="submit" value="Search" />
+            <input type="submit" value="Search" className="search" />
           </div>
         </div>
       </form>
@@ -33,14 +33,14 @@ export default function Weather() {
             </div>
             <div className="col-4 main-temp">54</div>
 
-            <div className="col-4">
+            <div className="col-4 unit">
               <div className="row celcius">°C</div>
               <div className="row fahrenheit">°F</div>
             </div>
           </div>
         </div>
         <div class="col-6">
-          <h3>Mostly Cloudy</h3>
+          <h4>Mostly Cloudy</h4>
           <ul>
             <li>Precipitation:15%</li>
             <li>Humidity: 72%</li>
