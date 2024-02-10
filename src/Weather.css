@@ -66,7 +66,18 @@ h3 {
     text-align: center;
   }
 
+  .main-section {
+    margin: 0 auto;
+  }
+
   .main {
     margin: 0 auto;
+  }
+
+  .temperature {
+    margin: 0 auto;
+    padding-left: 17px;
+    padding-right: 0;
+    width: 150px;
   }
 }

@@ -24,17 +24,22 @@ export default function Weather() {
       <div className="row details">
         <div className="col-md-6 main">
           <div className="row main-section">
-            <div className="col-md-5">
+            <div className="col-md-6">
               <img
                 src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
                 alt="Sunny"
                 className="main-icon"
               />
             </div>
-            <div className="col-5 main-temp">54</div>
-            <div className="col-2">
-              <div className="row celcius">°C</div>
-              <div className="row fahrenheit">°F</div>
+
+            <div className="col-6 temperature">
+              <div class="row ">
+                <div className="col-10 main-temp">54</div>
+                <div className="col-2">
+                  <div class="row">C</div>
+                  <div class="row">F</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
