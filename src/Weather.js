@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import WeatherInfo from "./WeatherInfo";
 import "./Weather.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 
 export default function Weather(props) {
@@ -19,7 +20,7 @@ export default function Weather(props) {
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
       visibility: response.data.visibility,
-      iconUrl: "https://ssl.gstatic.com/onebox/weather/64/sunny.png",
+      iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
   }
 
@@ -41,9 +42,9 @@ export default function Weather(props) {
   if (weatherData.ready) {
     return (
       <div className="weather-app">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="form">
           <div className="row">
-            <div className="col-9">
+            <div className="col-9 search-box">
               <input
                 type="search"
                 placeholder="Enter a city..."
@@ -51,16 +52,16 @@ export default function Weather(props) {
                 onChange={updateCity}
               />
             </div>
-            <div className="col-3 ">
+            <div className="col-3 d-none d-md-block">
               <input
                 type="submit"
                 value="Search"
                 className="d-none d-md-block search"
               />
             </div>
-          </div>
-          <div>
-            <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
+            <div className="col-3 d-md-none search-icon-container">
+              <FontAwesomeIcon icon={faSearch} className="search-icon" />
+            </div>
           </div>
         </form>
         <WeatherInfo data={weatherData} />
