@@ -1,65 +1,93 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Weather.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import axios from "axios";
 
-export default function Weather() {
-  return (
-    <div className="weather-app">
-      <form>
-        <div className="row">
-          <div className="col-9">
-            <input
-              type="search"
-              placeholder="Enter a city..."
-              className="form-control"
-            />
-          </div>
-          <div className="col-3 ">
-            <input
-              type="submit"
-              value="Search"
-              className="d-none d-md-block search"
-            />
-          </div>
-        </div>
-        <div>
-          <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
-        </div>
-      </form>
-      <h1>Seoul</h1>
-      <h3>Wednesday 7:00</h3>
+export default function Weather(props) {
+  const [weatherData, setWeatherData] = useState({ ready: false });
 
-      <div className="row details">
-        <div className="col-md-6 main-column">
-          <div className="row main-section">
-            <div className="col-md-6 icon-column">
-              <img
-                src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-                alt="Sunny"
-                className="main-icon"
+  function handleResponse(response) {
+    console.log(response.data);
+    setWeatherData({
+      ready: true,
+      city: response.data.name,
+      date: "Wednesday 10:00",
+      temperature: response.data.main.temp,
+      description: response.data.weather[0].description,
+      wind: response.data.wind.speed,
+      humidity: response.data.main.humidity,
+      visibility: response.data.visibility,
+      iconUrl: "https://ssl.gstatic.com/onebox/weather/64/sunny.png",
+    });
+  }
+
+  if (weatherData.ready) {
+    return (
+      <div className="weather-app">
+        <form>
+          <div className="row">
+            <div className="col-9">
+              <input
+                type="search"
+                placeholder="Enter a city..."
+                className="form-control"
               />
             </div>
+            <div className="col-3 ">
+              <input
+                type="submit"
+                value="Search"
+                className="d-none d-md-block search"
+              />
+            </div>
+          </div>
+          <div>
+            <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
+          </div>
+        </form>
+        <h1>{weatherData.city}</h1>
+        <h3>{weatherData.date}</h3>
 
-            <div className="col-6 temp-column">
-              <div class="row ">
-                <div className="col-9 main-temp">54</div>
-                <div className="col-3 unit">
-                  <div class="row celcius">°C</div>
-                  <div class="row fahrenheit">°F</div>
+        <div className="row details">
+          <div className="col-md-6 main-column">
+            <div className="row main-section">
+              <div className="col-md-6 icon-column">
+                <img
+                  src={weatherData.iconUrl}
+                  alt={weatherData.description}
+                  className="main-icon"
+                />
+              </div>
+
+              <div className="col-6 temp-column">
+                <div class="row ">
+                  <div className="col-9 main-temp">
+                    {Math.round(weatherData.temperature)}
+                  </div>
+                  <div className="col-3 unit">
+                    <div class="row celcius">°C</div>
+                    <div class="row fahrenheit">°F</div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="col-md-6 description-column">
-          <h4>Mostly Cloudy</h4>
-          <ul className="description-list">
-            <li>Precipitation:15%</li>
-            <li>Humidity: 72%</li>
-            <li>Wind: 13km/h</li>
-          </ul>
+          <div className="col-md-6 description-column">
+            <h4 className="text-capitalize">{weatherData.description}</h4>
+            <ul className="description-list">
+              <li>Visibility: {weatherData.visibility / 1000} km</li>
+              <li>Humidity: {weatherData.humidity}%</li>
+              <li>Wind: {weatherData.wind}km/h</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    const apiKey = "b40b135798f82a05aed08769f9275f50";
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+
+    return "Loading";
+  }
 }

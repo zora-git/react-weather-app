@@ -50,6 +50,7 @@ h3 {
 
 .main-temp {
   font-size: 80px;
+  text-align: right;
 }
 
 .unit {
@@ -94,6 +95,11 @@ h3 {
 
   .main-column {
     margin: 0 auto;
+  }
+
+  .main-temp {
+    font-size: 70px;
+    text-align: center;
   }
 
   .main-icon {
