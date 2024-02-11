@@ -5,12 +5,25 @@ body {
   background-size: full-width;
 }
 
-footer {
+.App {
   margin: 0 auto;
-  color: grey;
+  max-width: 700px;
+}
+footer {
+  color: white;
+  text-align: center;
+  margin-top: 30px;
 }
 
 a {
   color: white;
   font-weight: 700;
+}
+
+@media (width < 768px) {
+  footer {
+    max-width: 300px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+  }
 }
