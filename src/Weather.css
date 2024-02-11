@@ -40,7 +40,7 @@ h3 {
 }
 
 .icon-column {
-  padding-top: 5px;
+  margin-top: 10px;
 }
 
 .main-icon {
@@ -72,7 +72,11 @@ h3 {
 }
 
 .description-column {
-  padding: 10px 0 0 70px;
+  padding: 10px 0 0 40px;
+}
+
+.text-capitalize {
+  font-size: 22px;
 }
 
 .description-list {
@@ -102,15 +106,20 @@ h3 {
     text-align: center;
   }
 
+  .icon-column {
+    width: 250px;
+    margin: 0 auto;
+  }
   .main-icon {
     float: none;
+    margin: 0 auto;
   }
 
   .temp-column {
     margin: 0 auto;
     padding-left: 17px;
     padding-right: 0;
-    width: 150px;
+    width: 110px;
   }
 
   .description-column {
