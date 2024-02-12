@@ -60,7 +60,9 @@ export default function Weather(props) {
               />
             </div>
             <div className="col-3 d-md-none search-icon-container">
-              <FontAwesomeIcon icon={faSearch} className="search-icon" />
+              <a href="/" onClick={handleSubmit}>
+                <FontAwesomeIcon icon={faSearch} className="search-icon" />
+              </a>
             </div>
           </div>
         </form>

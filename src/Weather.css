@@ -63,12 +63,60 @@ h3 {
   display: block;
   justify-content: center;
   text-align: center;
+  font-weight: 700;
+}
+
+.celcius a:link {
+  text-decoration: none;
+  font-weight: 300;
+  color: grey;
+}
+
+.celcius a:visited {
+  text-decoration: none;
+  font-weight: 300;
+  color: grey;
+}
+
+.celcius a:hover {
+  text-decoration: underline;
+  font-weight: 300;
+  color: grey;
+}
+
+.celcius a:active {
+  text-decoration: none;
+  font-weight: 700;
 }
 
 .fahrenheit {
   display: block;
   justify-content: center;
   text-align: center;
+  font-weight: 700;
+}
+
+.fahrenheit a:link {
+  text-decoration: none;
+  font-weight: 300;
+  color: grey;
+}
+
+.fahrenheit a:visited {
+  text-decoration: none;
+  font-weight: 300;
+  color: grey;
+}
+
+.fahrenheit a:hover {
+  text-decoration: underline;
+  font-weight: 300;
+  color: grey;
+}
+
+.fahrenheit a:active {
+  text-decoration: none;
+  font-weight: 700;
 }
 
 .description-column {

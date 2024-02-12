@@ -21,7 +21,7 @@ function App() {
           target="_blank"
           rel="noreferrer"
         >
-          open-sourced
+          open-sourced on Github.
         </a>
       </footer>
     </div>
