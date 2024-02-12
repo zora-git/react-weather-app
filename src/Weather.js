@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { Watch } from "react-loader-spinner";
 import WeatherInfo from "./WeatherInfo";
 import "./Weather.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -71,6 +71,19 @@ export default function Weather(props) {
     );
   } else {
     search();
-    return "Loading";
+    return (
+      <div className="loader">
+        <Watch
+          visible={true}
+          height="80"
+          width="80"
+          radius="48"
+          color="rgba(255, 255, 255, 0.5)"
+          ariaLabel="watch-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+        />
+      </div>
+    );
   }
 }
