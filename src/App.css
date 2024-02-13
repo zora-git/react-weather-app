@@ -2,7 +2,8 @@ body {
   filter: brightness(150%);
   background-image: url("./mountain_background.jpg");
   background-repeat: no-repeat;
-  background-size: full-width;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .App {
